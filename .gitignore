@@ -1,0 +1,38 @@
+# ---- STM32CubeIDE ----
+Debug/
+Release/
+*.launch
+.settings/
+.cproject
+.project
+.mxproject
+.metadata/
+
+# ---- Keil MDK ----
+Objects/
+Listings/
+*.uvguix.*
+*.scvd
+*.bak
+*.dep
+*.crf
+*.o
+*.d
+*.axf
+*.htm
+*.lnp
+
+# ---- 编译产物 ----
+*.hex
+*.bin
+*.elf
+*.map
+
+# ---- 系统文件 ----
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# ---- 编辑器 ----
+.vscode/
+.idea/
