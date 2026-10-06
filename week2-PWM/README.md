@@ -104,8 +104,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     {
       t10 = 0;
       duty += step;
-      if (duty >= ____) { duty = ____; step = -1; }   /* 空1 */
-      if (duty <= ____) { duty = ____; step =  1; }   /* 空2 */
+      if (duty >= 100) { duty = 100; step = -1; }   /* 空1：满值 = 100 */
+      if (duty <=   0) { duty =   0; step =  1; }   /* 空2：灭   = 0   */
     }
   }
 
@@ -114,7 +114,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   {
     static uint8_t pwm_cnt = 0;
     pwm_cnt++;
-    if (pwm_cnt >= ____) pwm_cnt = 0;    /* 空3：一个周期分成几份？ */
+    if (pwm_cnt >= 100) pwm_cnt = 0;    /* 空3：ARR=99 -> 一个周期 100 步 */
 
     if (pwm_cnt < duty)
       HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);  /* 亮（低电平点亮） */
@@ -126,10 +126,18 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
 **务必先注释掉那行 `TogglePin`** —— 它和软件 PWM 都在抢 PC13，两个一起写会打架。
 
-## A5. 三个空的提示
+## A5. 三个空的答案（2026-10-06 已填入并编译通过）
 
-- 空1 / 空2：占空比的**满值**和**灭掉**分别是多少？（用 0~100 这套刻度）
-- 空3：`ARR = 99`，一个周期里中断进 100 次 → 分成几份？
+| 空 | 答案 | 为什么 |
+|---|---|---|
+| 空1 | `duty >= 100` → `duty = 100` | 0~100 这套刻度的**满值**，到了就掉头（`step = -1`） |
+| 空2 | `duty <= 0` → `duty = 0` | 刻度的**灭**，到了就往回走（`step = 1`） |
+| 空3 | `pwm_cnt >= 100` | `ARR = 99` → 一个周期中断进 `99+1 = 100` 次 → 分成 100 份，每份 1% |
+
+> 编译验证：`text 7568 / data 20 / bss 1724`，**0 errors 0 warnings**。
+
+**另一个容易踩的点**：`PC13` 被两拨人抢了 —— 按键中断里的 `TogglePin` 和软件 PWM 都在写它。
+所以那行 `TogglePin` **必须注释掉**，否则按键一按灯就乱。
 
 ## A6. 验证
 
