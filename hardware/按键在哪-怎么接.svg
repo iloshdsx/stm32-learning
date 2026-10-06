@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="620" viewBox="0 0 960 620"
+     font-family="Microsoft YaHei, Segoe UI, Arial, sans-serif">
+  <rect width="960" height="620" fill="#ffffff"/>
+
+  <text x="480" y="38" font-size="21" font-weight="bold" text-anchor="middle" fill="#111111">
+    按键在哪 · 按键怎么接
+  </text>
+
+  <!-- ==================== 左边：板子针脚 ==================== -->
+  <rect x="50" y="80" width="150" height="490" rx="14" fill="#2f6fb5"/>
+  <text x="125" y="110" font-size="15" font-weight="bold" text-anchor="middle" fill="#ffffff">Blue Pill</text>
+  <text x="125" y="130" font-size="11" text-anchor="middle" fill="#cfe0f5">左排针（从上往下数）</text>
+
+  <!-- 引脚 -->
+  <g stroke="#1b4f8a" stroke-width="3">
+    <line x1="200" y1="150" x2="232" y2="150"/>
+    <line x1="200" y1="186" x2="232" y2="186"/>
+    <line x1="200" y1="222" x2="232" y2="222"/>
+    <line x1="200" y1="258" x2="232" y2="258"/>
+    <line x1="200" y1="294" x2="232" y2="294"/>
+    <line x1="200" y1="330" x2="232" y2="330"/>
+    <line x1="200" y1="366" x2="232" y2="366"/>
+    <line x1="200" y1="448" x2="232" y2="448"/>
+    <line x1="200" y1="484" x2="232" y2="484"/>
+    <line x1="200" y1="520" x2="232" y2="520"/>
+  </g>
+
+  <g font-size="13.5" fill="#333333">
+    <text x="242" y="155">C13  （板载灯）</text>
+    <text x="242" y="191">C14</text>
+    <text x="242" y="227">C15</text>
+    <text x="242" y="298">A1</text>
+    <text x="242" y="334">A2</text>
+    <text x="242" y="370">A3</text>
+    <text x="242" y="415" font-size="16" fill="#9aa0a6">⋮</text>
+    <text x="242" y="453">3V3  （3.3V 输出）</text>
+    <text x="242" y="489">G    （GND 地）</text>
+    <text x="242" y="525">G    （GND 地）</text>
+  </g>
+
+  <!-- 高亮 A0 -->
+  <circle cx="232" cy="258" r="9" fill="#ff8a00"/>
+  <text x="242" y="263" font-size="14.5" font-weight="bold" fill="#d97400">A0  ★ 就是这里（第 5 个）</text>
+
+  <!-- 高亮 GND -->
+  <circle cx="232" cy="484" r="9" fill="#e2574c"/>
+  <circle cx="232" cy="520" r="9" fill="#e2574c"/>
+
+  <text x="242" y="566" font-size="13" fill="#e2574c" font-weight="bold">
+    ★ 红色的两个 G 就是 GND（地）
+  </text>
+
+  <!-- ==================== 右上：方法一 ==================== -->
+  <rect x="560" y="80" width="360" height="205" rx="14" fill="#f7faff" stroke="#cfdcf0" stroke-width="1.5"/>
+  <text x="580" y="110" font-size="15.5" font-weight="bold" fill="#1a3b6d">
+    方法一：一根杜邦线当按键（先用它验证代码）
+  </text>
+  <g font-size="13.5" fill="#33475e">
+    <text x="580" y="140">① 拿一根「公对母」杜邦线</text>
+    <text x="580" y="164">② 母头插到 A0 那个针上</text>
+    <text x="580" y="188">③ 公头用手拿着，去碰任意一个 G</text>
+    <text x="580" y="212">④ 碰住 0.5 秒 → 灯开始连翻</text>
+    <text x="580" y="236">⑤ 一松开 → 立刻停</text>
+  </g>
+  <text x="580" y="264" font-size="13.5" font-weight="bold" fill="#2aa35b">
+    👉 出现 ④⑤ 就说明代码是正确的
+  </text>
+
+  <!-- ==================== 右下：方法二 ==================== -->
+  <rect x="560" y="305" width="360" height="265" rx="14" fill="#fff8f2" stroke="#f0d5bd" stroke-width="1.5"/>
+  <text x="580" y="335" font-size="15.5" font-weight="bold" fill="#8a4b12">
+    方法二：轻触开关（元件包里那个四脚小方块）
+  </text>
+
+  <!-- 开关本体 -->
+  <rect x="640" y="370" width="125" height="95" rx="10" fill="#e9e9ee" stroke="#9aa0a6" stroke-width="2"/>
+  <circle cx="702" cy="417" r="27" fill="#cfd4da" stroke="#8d939a" stroke-width="2"/>
+
+  <!-- 四只脚 -->
+  <g stroke="#6b7075" stroke-width="3.5" stroke-linecap="round">
+    <line x1="640" y1="392" x2="604" y2="392"/>
+    <line x1="640" y1="443" x2="604" y2="443"/>
+    <line x1="765" y1="392" x2="801" y2="392"/>
+    <line x1="765" y1="443" x2="801" y2="443"/>
+  </g>
+  <circle cx="604" cy="392" r="5" fill="#6b7075"/>
+  <circle cx="604" cy="443" r="5" fill="#6b7075"/>
+  <circle cx="801" cy="392" r="5" fill="#6b7075"/>
+  <circle cx="801" cy="443" r="5" fill="#6b7075"/>
+
+  <text x="592" y="383" font-size="13" font-weight="bold" fill="#6b7075">①</text>
+  <text x="592" y="464" font-size="13" font-weight="bold" fill="#6b7075">②</text>
+  <text x="812" y="383" font-size="13" font-weight="bold" fill="#6b7075">③</text>
+  <text x="812" y="464" font-size="13" font-weight="bold" fill="#6b7075">④</text>
+
+  <!-- 同侧内部相通 -->
+  <line x1="620" y1="400" x2="620" y2="435" stroke="#e2574c" stroke-width="2" stroke-dasharray="4,4"/>
+  <line x1="785" y1="400" x2="785" y2="435" stroke="#e2574c" stroke-width="2" stroke-dasharray="4,4"/>
+
+  <g font-size="13.5" fill="#8a4b12">
+    <text x="580" y="497">接法：从【两侧各挑一个脚】</text>
+    <text x="580" y="521">　　　一组接 A0，另一组接 G</text>
+    <text x="580" y="545" font-weight="bold" fill="#e2574c">接错的判断：不按它，灯就自己一直翻</text>
+    <text x="580" y="566" font-weight="bold" fill="#e2574c">　　　　　　→ 说明接的是同一侧，换对面那个脚</text>
+  </g>
+</svg>

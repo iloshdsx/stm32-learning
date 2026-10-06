@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="540" viewBox="0 0 900 540"
+     font-family="Microsoft YaHei, Segoe UI, Arial, sans-serif">
+  <rect width="900" height="540" fill="#ffffff"/>
+
+  <text x="450" y="34" font-size="20" font-weight="bold" text-anchor="middle" fill="#111111">
+    短按 + 长按：合并到同一个按键上
+  </text>
+
+  <!-- ============ 短按 ============ -->
+  <text x="16" y="76" font-size="14" font-weight="bold" fill="#333333">短按 0.2 秒</text>
+
+  <text x="96" y="92"  font-size="11.5" fill="#888888">1 松开</text>
+  <text x="96" y="152" font-size="11.5" fill="#888888">0 按下</text>
+
+  <polyline points="90,100 140,100 140,135 180,135 180,100 830,100"
+            fill="none" stroke="#2b7de9" stroke-width="3.5" stroke-linejoin="round"/>
+
+  <!-- 松手翻一次 -->
+  <line x1="180" y1="70" x2="180" y2="122" stroke="#e2574c" stroke-width="3"/>
+  <polygon points="174,120 186,120 180,132" fill="#e2574c"/>
+  <text x="192" y="78" font-size="13.5" font-weight="bold" fill="#e2574c">松手 → 翻 1 次（这才是短按）</text>
+
+  <!-- ============ 长按 ============ -->
+  <text x="16" y="256" font-size="14" font-weight="bold" fill="#333333">长按 2.6 秒</text>
+
+  <text x="96" y="272" font-size="11.5" fill="#888888">1 松开</text>
+  <text x="96" y="332" font-size="11.5" fill="#888888">0 按下</text>
+
+  <polyline points="90,280 140,280 140,315 660,315 660,280 830,280"
+            fill="none" stroke="#2b7de9" stroke-width="3.5" stroke-linejoin="round"/>
+
+  <!-- 按住期间的 5 次翻转 -->
+  <g stroke="#e2574c" stroke-width="2.6">
+    <line x1="240" y1="258" x2="240" y2="306"/>
+    <line x1="340" y1="258" x2="340" y2="306"/>
+    <line x1="440" y1="258" x2="440" y2="306"/>
+    <line x1="540" y1="258" x2="540" y2="306"/>
+    <line x1="640" y1="258" x2="640" y2="306"/>
+  </g>
+  <g fill="#e2574c">
+    <polygon points="234,304 246,304 240,314"/>
+    <polygon points="334,304 346,304 340,314"/>
+    <polygon points="434,304 446,304 440,314"/>
+    <polygon points="534,304 546,304 540,314"/>
+    <polygon points="634,304 646,304 640,314"/>
+  </g>
+  <text x="252" y="252" font-size="13" font-weight="bold" fill="#e2574c">按住期间：每 500 ms 翻 1 次</text>
+
+  <!-- 松手不翻 -->
+  <line x1="660" y1="258" x2="660" y2="276" stroke="#9aa0a6" stroke-width="2.6"/>
+  <text x="672" y="252" font-size="13" font-weight="bold" fill="#9aa0a6">松手 → 不再翻</text>
+
+  <!-- ============ 说明 ============ -->
+  <rect x="40" y="352" width="820" height="166" rx="12" fill="#f6f9fe" stroke="#cfdcf0" stroke-width="1.5"/>
+
+  <text x="62" y="382" font-size="13.5" fill="#1a3b6d">① 按下那一瞬：记下时间 press_tick，并把「长按过」标记 <tspan font-weight="bold">清零</tspan>。</text>
+  <text x="62" y="410" font-size="13.5" fill="#1a3b6d">② 只要还按着：每够 500 ms 就翻一次，同时把「长按过」标记 <tspan font-weight="bold">设为 1</tspan>。</text>
+  <text x="62" y="438" font-size="13.5" fill="#1a3b6d">③ 松开那一瞬：先看「长按过」标记 ——</text>
+  <text x="88" y="464" font-size="13.5" fill="#1a3b6d">标记 = 0（这次没长按过）→ <tspan font-weight="bold" fill="#e2574c">翻一次</tspan>，这就是短按。</text>
+  <text x="88" y="490" font-size="13.5" fill="#1a3b6d">标记 = 1（刚才已经长按过）→ <tspan font-weight="bold" fill="#9aa0a6">什么都不做</tspan>，否则松手会白多翻一次。</text>
+</svg>

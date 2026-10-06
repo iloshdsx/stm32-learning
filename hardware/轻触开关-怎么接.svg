@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="590" viewBox="0 0 1040 590"
+     font-family="Microsoft YaHei, Segoe UI, Arial, sans-serif">
+  <rect width="1040" height="590" fill="#ffffff"/>
+
+  <text x="520" y="38" font-size="21" font-weight="bold" text-anchor="middle" fill="#111111">
+    轻触开关（四脚）：怎么插 · 怎么接
+  </text>
+
+  <!-- ==================== 左：开关分组 ==================== -->
+  <rect x="40" y="62" width="470" height="342" rx="14" fill="#fbfbfd" stroke="#dcdce2" stroke-width="1.5"/>
+  <text x="62" y="94" font-size="15.5" font-weight="bold" fill="#333333">① 四个脚 = 两组，同一侧的两个是一组</text>
+
+  <!-- 开关本体 -->
+  <rect x="190" y="150" width="170" height="170" rx="12" fill="#ececf1" stroke="#909599" stroke-width="2"/>
+  <circle cx="275" cy="235" r="40" fill="#d3d7dc" stroke="#8d939a" stroke-width="2"/>
+  <text x="275" y="240" font-size="12" text-anchor="middle" fill="#6b7075">按键</text>
+
+  <!-- 左侧两脚（橙色 = 同一组） -->
+  <g stroke="#ff8a00" stroke-width="4" stroke-linecap="round">
+    <line x1="190" y1="182" x2="145" y2="182"/>
+    <line x1="190" y1="288" x2="145" y2="288"/>
+  </g>
+  <circle cx="145" cy="182" r="6" fill="#ff8a00"/>
+  <circle cx="145" cy="288" r="6" fill="#ff8a00"/>
+  <polyline points="145,182 122,182 122,288 145,288"
+            fill="none" stroke="#ff8a00" stroke-width="2" stroke-dasharray="5,4"/>
+  <text x="52" y="240" font-size="12.5" font-weight="bold" fill="#d97400">同一组</text>
+  <text x="52" y="258" font-size="11" fill="#d97400">（内部通着）</text>
+
+  <!-- 右侧两脚（红色 = 另一组） -->
+  <g stroke="#e2574c" stroke-width="4" stroke-linecap="round">
+    <line x1="360" y1="182" x2="405" y2="182"/>
+    <line x1="360" y1="288" x2="405" y2="288"/>
+  </g>
+  <circle cx="405" cy="182" r="6" fill="#e2574c"/>
+  <circle cx="405" cy="288" r="6" fill="#e2574c"/>
+  <polyline points="405,182 428,182 428,288 405,288"
+            fill="none" stroke="#e2574c" stroke-width="2" stroke-dasharray="5,4"/>
+  <text x="437" y="240" font-size="12.5" font-weight="bold" fill="#c0392b">另一组</text>
+
+  <!-- 脚号 -->
+  <text x="152" y="172" font-size="13" font-weight="bold" fill="#6b7075">①</text>
+  <text x="152" y="312" font-size="13" font-weight="bold" fill="#6b7075">②</text>
+  <text x="386" y="172" font-size="13" font-weight="bold" fill="#6b7075">③</text>
+  <text x="386" y="312" font-size="13" font-weight="bold" fill="#6b7075">④</text>
+
+  <text x="62" y="356" font-size="13.5" fill="#d97400">→ 橙色这一组 接板子的 A0</text>
+  <text x="62" y="382" font-size="13.5" fill="#c0392b">→ 红色那一组 接板子的 G (GND)</text>
+
+  <!-- ==================== 右：口诀 ==================== -->
+  <rect x="540" y="62" width="460" height="342" rx="14" fill="#f6f9fe" stroke="#cfdcf0" stroke-width="1.5"/>
+  <text x="562" y="94" font-size="15.5" font-weight="bold" fill="#1a3b6d">② 一句话记住怎么选脚</text>
+
+  <text x="562" y="130" font-size="14.5" fill="#33475e">开关四只脚，分成左右两组：</text>
+  <text x="580" y="160" font-size="14.5" fill="#33475e">• 左边两只 是一组</text>
+  <text x="580" y="188" font-size="14.5" fill="#33475e">• 右边两只 是另一组</text>
+  <text x="562" y="222" font-size="14.5" fill="#33475e">同一组的两只脚，内部本来就是连着的，</text>
+  <text x="562" y="248" font-size="14.5" fill="#33475e">所以要 <tspan font-weight="bold" fill="#c0392b">一边取一只</tspan>：</text>
+  <text x="580" y="278" font-size="14.5" fill="#d97400">一只（左）→ A0</text>
+  <text x="580" y="306" font-size="14.5" fill="#c0392b">另一只（右）→ G</text>
+
+  <rect x="562" y="326" width="416" height="58" rx="10" fill="#fff4e8" stroke="#f0cfa8"/>
+  <text x="578" y="350" font-size="13.5" font-weight="bold" fill="#8a4b12">接错的样子：不按它，灯就自己一直翻。</text>
+  <text x="578" y="372" font-size="13.5" fill="#8a4b12">说明两只脚选了同一组 → 把其中一根线换到对面。</text>
+
+  <!-- ==================== 下：操作步骤 ==================== -->
+  <rect x="40" y="424" width="960" height="140" rx="14" fill="#fffdf7" stroke="#ecdcae" stroke-width="1.5"/>
+  <text x="62" y="452" font-size="14.5" fill="#5a4a12">③ 把开关插到面包板上：四个脚各插一个孔，跨在中间那条凹槽上最稳。</text>
+  <text x="62" y="478" font-size="14.5" fill="#5a4a12">　　脚稍微掰一点点没关系，铜脚有韧性，掰不断。</text>
+  <text x="62" y="506" font-size="14.5" fill="#5a4a12">④ 拿两根杜邦线：一根从橙色那组 → 板子 A0　；　一根从红色那组 → 板子 G。</text>
+  <text x="62" y="534" font-size="14.5" fill="#5a4a12">⑤ 不用接电阻 —— PA0 的内部上拉已经在 CubeMX 里开好了。</text>
+</svg>

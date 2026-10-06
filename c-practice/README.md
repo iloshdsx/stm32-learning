@@ -10,6 +10,7 @@
 | `swap_exercise.c` | 写一个交换函数 | **指针入门**：`&` 取地址、`*` 解引用、传值 vs 传地址 |
 | `sort_exercise.c` | 选择排序（从小到大） | 双重循环、下标区间 `[i, len-1]`、`sizeof` 求长度 |
 | `sort_trace.c` | 带"逐步打印"的选择排序 | **调试方法：打印中间状态** |
+| `min_max_fill.c` | 一个函数同时求最小值和最大值（填空版） | **指针出参**：`*pmin` / `*pmax`、`&min` 传地址、地址验证实验 |
 
 编译运行：
 
@@ -17,6 +18,7 @@
 gcc swap_exercise.c -o t.exe -Wall ; ./t.exe
 gcc sort_exercise.c -o t.exe -Wall ; ./t.exe
 gcc sort_trace.c    -o t.exe -Wall ; ./t.exe
+gcc min_max_fill.c  -o t.exe -Wall ; ./t.exe
 ```
 
 中文乱码的话：源文件是 UTF-8，Windows 控制台是 GBK。要么 printf 用英文，
@@ -59,7 +61,66 @@ for (int j = i + 1; j < len; j++)        /* 负责区间的"尾" */
 
 外层只跑到 `i < len - 1`：因为最后剩 1 个元素时它自动就位，不用排。
 
-## 四、踩过的坑
+## 四、指针出参：一个函数怎么"带回"两个结果
+
+C 的函数 **只能 `return` 一个值**。想要两个结果，就让调用者把**地址**递进来，
+函数往那个地址里写。
+
+```c
+void min_max(int a[], int len, int *pmin, int *pmax)
+{
+    int mn = a[0], mx = a[0];
+    for (int i = 1; i < len; i++)
+    {
+        if (a[i] < mn) mn = a[i];      /* 发现更小的，记下来 */
+        if (a[i] > mx) mx = a[i];      /* 发现更大的，记下来 */
+    }
+    *pmin = mn;                        /* 往"最小值的家"写 */
+    *pmax = mx;                        /* 往"最大值的家"写 */
+}
+
+int main(void)
+{
+    int a[] = {7, 3, 9, 1, 8, 2};
+    int len = sizeof(a) / sizeof(a[0]);
+    int min = 0, max = 0;
+
+    min_max(a, len, &min, &max);       /* 传的是门牌号 */
+    printf("min = %d, max = %d\n", min, max);   /* min = 1, max = 9 */
+}
+```
+
+三点一定要记牢：
+
+1. `&min` 是"问 min 的地址"，`pmin` 接住的就是这个地址。
+2. `*pmin = mn` 是"**上门**，把 mn 放进 pmin 指的那间房"——改的是 main 里的 `min`。
+3. 如果写成 `pmin = &mn`，那只是把**抄件**改成指向别人家，`main` 的 `min` 一点不动。
+   这跟"传值改不了原件"是同一个坑，换了个马甲。
+
+**为什么嵌入式天天见这套路？** HAL 都是这么写的：
+
+```c
+HAL_StatusTypeDef HAL_UART_Receive(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+HAL_StatusTypeDef HAL_GPIO_ReadPin(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin);
+```
+
+第一个参数传句柄地址（既是输入也是输出），返回值只留给**错误码**。
+看懂 `*pData` 这种写法，才算能读 HAL 源码。
+
+**验证实验（做过这道题的人一定自己跑一遍）**：
+
+```c
+/* main 里，调用 min_max 之前 */
+printf("&min = %p, &max = %p\n", (void *)&min, (void *)&max);
+
+/* min_max 里，*pmax = mx; 下面 */
+printf("pmin = %p, pmax = %p\n", (void *)pmin, (void *)pmax);
+```
+
+两组地址**打印出来是同一个数** —— 这才是"抄的是门牌号"这句话的铁证，
+不是背下来的结论。
+
+## 五、踩过的坑
 
 ### 1. `min_index = 0` 而不是 `i`（结果 `9 1 2 3 5 7`）
 
@@ -76,7 +137,7 @@ for (int j = i + 1; j < len; j++)        /* 负责区间的"尾" */
 
 ---
 
-## 五、两条心法
+## 六、两条心法
 
 1. **看不懂代码时，不要盯着它"想"，要"手动跑程序"。** 拿一张纸，把每一行执行一遍，
    写下每一次 i / j / min_index / 数组内容。走三遍，理解自己就长出来了。

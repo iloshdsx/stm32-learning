@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="470" viewBox="0 0 960 470"
+     font-family="Microsoft YaHei, Segoe UI, Arial, sans-serif">
+  <rect width="960" height="470" fill="#ffffff"/>
+
+  <text x="480" y="40" font-size="21" font-weight="bold" text-anchor="middle" fill="#111111">
+    CH340「USB 转 TTL」模块长什么样
+  </text>
+
+  <!-- USB 公头 -->
+  <rect x="120" y="150" width="115" height="82" rx="4" fill="#c9cbd1" stroke="#8f939a" stroke-width="2"/>
+  <rect x="132" y="166" width="90" height="50" rx="2" fill="#e2e4e8" stroke="#a8acb3"/>
+  <rect x="142" y="176" width="70" height="8" rx="2" fill="#b6bac1"/>
+  <rect x="142" y="198" width="70" height="8" rx="2" fill="#b6bac1"/>
+
+  <!-- 模块主板 -->
+  <rect x="235" y="115" width="440" height="152" rx="8" fill="#1e6b3d" stroke="#0f4a26" stroke-width="2"/>
+
+  <!-- 芯片 -->
+  <rect x="305" y="160" width="100" height="78" rx="3" fill="#26262a" stroke="#000000" stroke-width="1.5"/>
+  <text x="355" y="204" font-size="13" font-weight="bold" text-anchor="middle" fill="#ffffff">CH340G</text>
+
+  <!-- 跳线帽 -->
+  <rect x="445" y="134" width="78" height="34" rx="4" fill="#2b2b30" stroke="#000000" stroke-width="1.5"/>
+  <text x="484" y="156" font-size="10.5" text-anchor="middle" fill="#ffffff">3V3 | 5V</text>
+
+  <!-- 小元件 -->
+  <rect x="560" y="150" width="26" height="16" rx="2" fill="#8a8a90"/>
+  <rect x="560" y="216" width="26" height="16" rx="2" fill="#8a8a90"/>
+  <rect x="610" y="150" width="18" height="12" rx="2" fill="#c94f4f"/>
+  <rect x="610" y="220" width="18" height="12" rx="2" fill="#4f8ac9"/>
+
+  <!-- 排针 -->
+  <g stroke="#c9a227" stroke-width="6" stroke-linecap="round">
+    <line x1="675" y1="152" x2="726" y2="152"/>
+    <line x1="675" y1="184" x2="726" y2="184"/>
+    <line x1="675" y1="216" x2="726" y2="216"/>
+    <line x1="675" y1="248" x2="726" y2="248"/>
+  </g>
+  <g font-size="13" font-weight="bold" fill="#333333">
+    <text x="738" y="157">VCC</text>
+    <text x="738" y="189">GND</text>
+    <text x="738" y="221">TXD</text>
+    <text x="738" y="253">RXD</text>
+  </g>
+  <text x="738" y="278" font-size="11" fill="#999999">（顺序各厂家不同，</text>
+  <text x="738" y="294" font-size="11" fill="#999999">　按板子上印的认）</text>
+
+  <!-- 标注：USB -->
+  <line x1="150" y1="140" x2="150" y2="146" stroke="#666666" stroke-width="1.5"/>
+  <text x="120" y="132" font-size="12.5" fill="#666666">USB 公头</text>
+
+  <!-- 标注：芯片 -->
+  <line x1="330" y1="160" x2="300" y2="100" stroke="#666666" stroke-width="1.5"/>
+  <text x="212" y="92" font-size="12.5" fill="#666666">CH340 芯片（USB ↔ 串口）</text>
+
+  <!-- 标注：跳线 -->
+  <line x1="484" y1="134" x2="484" y2="100" stroke="#e2574c" stroke-width="1.5"/>
+  <text x="484" y="92" font-size="12.5" font-weight="bold" text-anchor="middle" fill="#e2574c">跳线帽：切 3V3 / 5V</text>
+
+  <!-- 说明 -->
+  <rect x="40" y="322" width="880" height="126" rx="12" fill="#f6f9fe" stroke="#cfdcf0" stroke-width="1.5"/>
+  <text x="62" y="350" font-size="13.5" fill="#1a3b6d">① 一头是 <tspan font-weight="bold">USB 公头</tspan> → 直接插电脑；另一头是 <tspan font-weight="bold">4 个针脚</tspan> → 接 STM32。</text>
+  <text x="62" y="377" font-size="13.5" fill="#1a3b6d">② 中间那颗黑方块写着 <tspan font-weight="bold">CH340</tspan>（CH340G / CH340C / CH340N 都行），它负责把 USB 转成串口。</text>
+  <text x="62" y="404" font-size="13.5" fill="#1a3b6d">③ 那个小跳线帽：插在 <tspan font-weight="bold" fill="#2aa35b">3V3</tspan> 那一档（你的板子是 3.3V 电平）。</text>
+  <text x="62" y="431" font-size="13.5" fill="#1a3b6d">④ 常见的还有 Type-C 口的版本、以及 6 针（多 DTR/RTS）的版本 —— 只要是 CH340 芯片就算对。</text>
+</svg>

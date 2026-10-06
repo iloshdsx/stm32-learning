@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="830" viewBox="0 0 1000 830">
+  <rect width="1000" height="830" fill="#ffffff"/>
+
+  <text x="500" y="44" font-family="Microsoft YaHei, sans-serif" font-size="28" font-weight="bold" text-anchor="middle" fill="#0f172a">你板子上的 SWD 4 针 · 正确接法</text>
+  <text x="500" y="76" font-family="Microsoft YaHei, sans-serif" font-size="16" text-anchor="middle" fill="#64748b">丝印顺序：GND → SWCLK → SWDIO → 3V3（从上往下）</text>
+
+  <!-- ============ 板子示意图 ============ -->
+  <text x="345" y="106" font-family="Microsoft YaHei, sans-serif" font-size="15" font-weight="bold" text-anchor="middle" fill="#0f172a">STM32F103C8T6 最小系统板（顶视图）</text>
+
+  <rect x="120" y="118" width="430" height="152" rx="10" fill="#123a6b"/>
+
+  <circle cx="145" cy="142" r="6.5" fill="#d4af37"/>
+  <circle cx="145" cy="175" r="6.5" fill="#d4af37"/>
+  <circle cx="145" cy="208" r="6.5" fill="#d4af37"/>
+  <circle cx="145" cy="241" r="6.5" fill="#d4af37"/>
+  <rect x="132" y="129" width="26" height="126" rx="6" fill="none" stroke="#f59e0b" stroke-width="3" stroke-dasharray="7 5"/>
+
+  <rect x="330" y="165" width="140" height="72" rx="6" fill="#0b1220"/>
+  <text x="400" y="208" font-family="Microsoft YaHei, sans-serif" font-size="17" font-weight="bold" text-anchor="middle" fill="#cbd5e1">STM32</text>
+
+  <rect x="548" y="168" width="36" height="46" rx="5" fill="#cbd5e1" stroke="#94a3b8" stroke-width="2"/>
+  <text x="566" y="234" font-family="Microsoft YaHei, sans-serif" font-size="13" text-anchor="middle" fill="#475569">USB</text>
+
+  <text x="120" y="294" font-family="Microsoft YaHei, sans-serif" font-size="15" font-weight="bold" text-anchor="start" fill="#dc2626">↑ 丝印写着 GND / SWCLK / SWDIO / 3V3 的那 4 个针</text>
+
+  <!-- ============ 接线 ============ -->
+  <text x="150" y="345" font-family="Microsoft YaHei, sans-serif" font-size="17" font-weight="bold" text-anchor="middle" fill="#0f172a">板子的 4 个针</text>
+
+  <line x1="205" y1="460" x2="603" y2="460" stroke="#111827" stroke-width="5"/>
+  <line x1="205" y1="515" x2="603" y2="515" stroke="#16a34a" stroke-width="5"/>
+  <line x1="205" y1="570" x2="603" y2="570" stroke="#f59e0b" stroke-width="5"/>
+  <line x1="205" y1="625" x2="603" y2="625" stroke="#dc2626" stroke-width="5"/>
+
+  <text x="175" y="468" font-family="Microsoft YaHei, sans-serif" font-size="21" font-weight="bold" text-anchor="end" fill="#0f172a">GND</text>
+  <text x="175" y="523" font-family="Microsoft YaHei, sans-serif" font-size="21" font-weight="bold" text-anchor="end" fill="#0f172a">SWCLK</text>
+  <text x="175" y="578" font-family="Microsoft YaHei, sans-serif" font-size="21" font-weight="bold" text-anchor="end" fill="#0f172a">SWDIO</text>
+  <text x="175" y="633" font-family="Microsoft YaHei, sans-serif" font-size="21" font-weight="bold" text-anchor="end" fill="#0f172a">3V3</text>
+
+  <circle cx="195" cy="460" r="10" fill="#d4af37" stroke="#a16207" stroke-width="2"/>
+  <circle cx="195" cy="515" r="10" fill="#d4af37" stroke="#a16207" stroke-width="2"/>
+  <circle cx="195" cy="570" r="10" fill="#d4af37" stroke="#a16207" stroke-width="2"/>
+  <circle cx="195" cy="625" r="10" fill="#d4af37" stroke="#a16207" stroke-width="2"/>
+
+  <!-- ============ ST-Link ============ -->
+  <rect x="603" y="370" width="340" height="290" rx="14" fill="#2b579a"/>
+  <text x="773" y="408" font-family="Microsoft YaHei, sans-serif" font-size="22" font-weight="bold" text-anchor="middle" fill="#ffffff">ST-Link V2</text>
+  <text x="773" y="434" font-family="Microsoft YaHei, sans-serif" font-size="14" text-anchor="middle" fill="#c7d9f0">10 个针里只用这 4 个</text>
+
+  <circle cx="603" cy="460" r="10" fill="#111827" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="603" cy="515" r="10" fill="#16a34a" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="603" cy="570" r="10" fill="#f59e0b" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="603" cy="625" r="10" fill="#dc2626" stroke="#ffffff" stroke-width="2"/>
+
+  <text x="628" y="468" font-family="Microsoft YaHei, sans-serif" font-size="21" font-weight="bold" fill="#ffffff">GND</text>
+  <text x="628" y="523" font-family="Microsoft YaHei, sans-serif" font-size="21" font-weight="bold" fill="#ffffff">SWCLK</text>
+  <text x="628" y="578" font-family="Microsoft YaHei, sans-serif" font-size="21" font-weight="bold" fill="#ffffff">SWDIO</text>
+  <text x="628" y="633" font-family="Microsoft YaHei, sans-serif" font-size="21" font-weight="bold" fill="#ffffff">3.3V</text>
+
+  <!-- ============ 注意事项 ============ -->
+  <rect x="55" y="690" width="890" height="122" rx="10" fill="#fff7ed" stroke="#fdba74" stroke-width="2"/>
+  <text x="80" y="719" font-family="Microsoft YaHei, sans-serif" font-size="15" font-weight="bold" fill="#9a3412">⚠ 一根一根按丝印对，名字一样就连一起（GND-GND、SWCLK-SWCLK、SWDIO-SWDIO、3V3-3.3V）</text>
+  <text x="80" y="745" font-family="Microsoft YaHei, sans-serif" font-size="15" font-weight="bold" fill="#9a3412">⚠ 4 个针全部插满；母头要用点力按到底，虚接是最常见的坑</text>
+  <text x="80" y="771" font-family="Microsoft YaHei, sans-serif" font-size="15" fill="#7c2d12">怕接错 3.3V/GND？可以从板子长边上丝印写着 3.3 和 G 的针接 —— 那两个字大，绝不会认错</text>
+  <text x="80" y="797" font-family="Microsoft YaHei, sans-serif" font-size="15" fill="#7c2d12">SWDIO 和 SWCLK 接反不会烧板子；连不上就把这两根对调再试</text>
+</svg>
